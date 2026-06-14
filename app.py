@@ -24,10 +24,13 @@ st.markdown("""
 #MainMenu, footer, header { visibility:hidden; }
 .block-container { padding-top:1.6rem; max-width:1300px; }
 h1,h2,h3,h4 { color:#f4f6fa; font-family:'Inter',-apple-system,sans-serif; letter-spacing:-.01em; }
-.kpi { background:#141925; border:1px solid #222a3a; border-radius:12px; padding:18px 20px; }
-.kpi .lab { color:#8b93a7; font-size:.74rem; text-transform:uppercase; letter-spacing:.06em; }
-.kpi .val { color:#f4f6fa; font-size:1.7rem; font-weight:650; margin-top:4px; }
-.kpi .sub { font-size:.8rem; margin-top:2px; }
+.kpi { background:#141925; border:1px solid #222a3a; border-radius:12px; padding:16px 18px;
+       height:124px; box-sizing:border-box; display:flex; flex-direction:column;
+       justify-content:center; overflow:hidden; }
+.kpi .lab { color:#8b93a7; font-size:.72rem; text-transform:uppercase; letter-spacing:.06em;
+            white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.kpi .val { color:#f4f6fa; font-size:1.65rem; font-weight:650; margin-top:6px; line-height:1.1; }
+.kpi .sub { font-size:.78rem; margin-top:6px; line-height:1.2; }
 .pos { color:#3ddc97; } .neg { color:#ff6b6b; } .mut { color:#8b93a7; }
 .banner { background:#2a1d0a; border:1px solid #6b4e16; color:#f0c674; border-radius:10px;
           padding:10px 16px; font-size:.86rem; margin-bottom:18px; }
@@ -70,11 +73,11 @@ st.markdown(f"<div class='banner'>⚠ <b>{snap.get('status','')}</b> — figures
 st.markdown("<div class='sect'>Live paper account</div>", unsafe_allow_html=True)
 c = st.columns(5)
 ret = acc.get("total_return", 0); dd = acc.get("drawdown", 0)
-kpi(c[0], "Equity", f"${acc.get('equity',0):,.0f}", f"inception ${acc.get('inception_equity',0):,.0f}")
-kpi(c[1], "Return since inception", pct(ret), f"day {acc.get('days_live',0)} · lumpy, judge over months", cls(ret))
+kpi(c[0], "Equity", f"${acc.get('equity',0):,.0f}", f"test start ${acc.get('inception_equity',0):,.0f}")
+kpi(c[1], "Return since test start", pct(ret), f"day {acc.get('days_live',0)} · judge over months", cls(ret))
 kpi(c[2], "Drawdown", pct(-abs(dd)), f"{acc.get('dd_budget_used',0)*100:.0f}% of 20% budget", cls(-dd))
-kpi(c[3], "Premium captured", f"${acc.get('net_premium_captured',0):,.0f}", "net option credit, inception-to-date", "pos")
-kpi(c[4], "Cash", f"${acc.get('cash',0):,.0f}", "settles into GLD sleeve")
+kpi(c[3], "Premium captured", f"${acc.get('net_premium_captured',0):,.0f}", "since test start", "pos")
+kpi(c[4], "Cash", f"${acc.get('cash',0):,.0f}", "settles into GLD")
 
 # ---- equity curve ------------------------------------------------------------
 curve = acc.get("equity_curve", [])
@@ -87,7 +90,7 @@ if curve:
     base = acc.get("inception_equity")
     if base:
         fig.add_hline(y=base, line_dash="dot", line_color="#8b93a7",
-                      annotation_text="inception", annotation_font_color="#8b93a7")
+                      annotation_text="test start", annotation_font_color="#8b93a7")
     rng = df["equity"].max() - df["equity"].min()
     fig.update_layout(height=340, margin=dict(l=0, r=0, t=10, b=0),
                       paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
