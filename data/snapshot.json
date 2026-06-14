@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T11:06:22",
+  "generated_at": "2026-06-14T11:32:12",
   "status": "PAPER TRADING \u2014 HYPOTHETICAL, NO REAL CAPITAL",
   "backtest": {
     "period": "2007-2026 (hypothetical / backtested, monthly grain)",
@@ -92,16 +92,16 @@
   "account": {
     "equity": 92414.73,
     "cash": 347.03,
-    "inception_equity": 90033.87,
-    "inception_date": "2026-06-10",
+    "inception_equity": 91848.92,
+    "inception_date": "2026-06-09",
     "gate_baseline": 90033.87,
-    "total_return": 0.0264,
+    "total_return": 0.0062,
     "drawdown": 0.0009,
     "peak_equity": 92501.63,
     "dd_budget": 0.2,
     "dd_budget_used": 0.0047,
-    "net_premium_captured": 0.0,
-    "days_live": 4,
+    "net_premium_captured": 1285.0,
+    "days_live": 5,
     "positions": [
       {
         "symbol": "GLD",
@@ -126,6 +126,10 @@
       }
     ],
     "equity_curve": [
+      {
+        "date": "2026-06-09",
+        "equity": 91848.92
+      },
       {
         "date": "2026-06-10",
         "equity": 89610.93

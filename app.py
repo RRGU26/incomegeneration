@@ -36,6 +36,15 @@ h1,h2,h3,h4 { color:#f4f6fa; font-family:'Inter',-apple-system,sans-serif; lette
           padding:10px 16px; font-size:.86rem; margin-bottom:18px; }
 .sect { color:#8b93a7; font-size:.78rem; text-transform:uppercase; letter-spacing:.08em;
         margin:26px 0 8px; border-bottom:1px solid #222a3a; padding-bottom:6px; }
+.tbl { width:100%; border-collapse:collapse; font-size:.86rem; margin-top:4px; }
+.tbl th { text-align:left; color:#8b93a7; font-weight:600; font-size:.68rem; text-transform:uppercase;
+          letter-spacing:.05em; padding:9px 12px; border-bottom:1px solid #2a3346; }
+.tbl td { padding:10px 12px; border-bottom:1px solid #171d29; color:#d7dbe4; }
+.tbl tr:last-child td { border-bottom:none; }
+.tbl .num { text-align:right; font-variant-numeric:tabular-nums; }
+.tbl tbody tr:hover td { background:#10151f; }
+.tbl .hl td { background:#10202e; font-weight:600; color:#f4f6fa; }
+.tbl .nm { color:#cfd4de; }
 </style>""", unsafe_allow_html=True)
 
 DATA = os.path.join(os.path.dirname(__file__), "data", "snapshot.json")
@@ -83,10 +92,13 @@ kpi(c[4], "Cash", f"${acc.get('cash',0):,.0f}", "settles into GLD")
 curve = acc.get("equity_curve", [])
 if curve:
     df = pd.DataFrame(curve); df["date"] = pd.to_datetime(df["date"])
+    st.markdown("<div class='sect'>Daily performance (paper)</div>", unsafe_allow_html=True)
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=df["date"], y=df["equity"], mode="lines",
-                             line=dict(color="#3ddc97", width=2), fill="tozeroy",
-                             fillcolor="rgba(61,220,151,0.06)", name="Equity"))
+    fig.add_trace(go.Scatter(x=df["date"], y=df["equity"], mode="lines+markers",
+                             line=dict(color="#3ddc97", width=2.2),
+                             marker=dict(size=6, color="#3ddc97", line=dict(width=1, color="#0b0e14")),
+                             fill="tozeroy", fillcolor="rgba(61,220,151,0.06)", name="Equity",
+                             hovertemplate="%{x|%b %d}<br>$%{y:,.0f}<extra></extra>"))
     base = acc.get("inception_equity")
     if base:
         fig.add_hline(y=base, line_dash="dot", line_color="#8b93a7",
@@ -112,29 +124,34 @@ st.markdown(f"<span class='mut' style='font-size:.8rem'>Pricing: {bt.get('pricin
             f"Not a tradeable P&L; estimates risk/return shape.</span>", unsafe_allow_html=True)
 
 # ---- regime + benchmark ------------------------------------------------------
+def signed(x): return f"<span class='{cls(x)}'>{pct(x)}</span>"
+
 left, right = st.columns(2)
 with left:
     st.markdown("<div class='sect'>Return by market regime (monthly)</div>", unsafe_allow_html=True)
-    rg = pd.DataFrame(snap.get("regime", []))
-    if not rg.empty:
-        rg["QQQ"] = rg["qqq"].map(lambda x: pct(x)); rg["Strategy"] = rg["strategy"].map(lambda x: pct(x))
-        st.dataframe(rg[["regime","months","QQQ","Strategy","note"]].rename(
-            columns={"regime":"Regime","months":"# mo","note":""}),
-            hide_index=True, use_container_width=True)
-    st.markdown("<span class='mut' style='font-size:.78rem'>Profitable in flat markets; "
+    rows = "".join(
+        f"<tr><td class='nm'>{r['regime']}</td><td class='num mut'>{r['months']}</td>"
+        f"<td class='num'>{signed(r['qqq'])}</td><td class='num'>{signed(r['strategy'])}</td>"
+        f"<td class='mut'>{r['note']}</td></tr>" for r in snap.get("regime", []))
+    st.markdown(f"<table class='tbl'><thead><tr><th>Regime</th><th class='num'>Mo</th>"
+                f"<th class='num'>QQQ</th><th class='num'>Strategy</th><th>Read</th></tr></thead>"
+                f"<tbody>{rows}</tbody></table>", unsafe_allow_html=True)
+    st.markdown("<div class='mut' style='font-size:.78rem;margin-top:8px'>Profitable in flat markets; "
                 "beats buy-&-hold in flat/down/mild; capped in melt-ups; still loses in crashes "
-                "(income cushions, does not protect).</span>", unsafe_allow_html=True)
+                "(income cushions, does not protect).</div>", unsafe_allow_html=True)
 with right:
     st.markdown("<div class='sect'>Vs alternatives (mind the caveat)</div>", unsafe_allow_html=True)
-    bm = pd.DataFrame(snap.get("benchmarks", []))
-    if not bm.empty:
-        bm["CAGR"] = bm["cagr"].map(lambda x: pct(x)); bm["Sharpe"] = bm["sharpe"].map(lambda x: f"{x:.2f}")
-        bm["Max DD"] = bm["max_dd"].map(lambda x: pct(x))
-        st.dataframe(bm[["name","CAGR","Sharpe","Max DD"]].rename(columns={"name":""}),
-                     hide_index=True, use_container_width=True)
-    st.markdown("<span class='mut' style='font-size:.78rem'>Strategy is gross/paper/monthly; "
+    rows = "".join(
+        f"<tr class='{'hl' if i==0 else ''}'><td class='nm'>{b['name']}</td>"
+        f"<td class='num'>{signed(b['cagr'])}</td><td class='num'>{b['sharpe']:.2f}</td>"
+        f"<td class='num'>{signed(b['max_dd'])}</td></tr>"
+        for i, b in enumerate(snap.get("benchmarks", [])))
+    st.markdown(f"<table class='tbl'><thead><tr><th>Strategy / benchmark</th><th class='num'>CAGR</th>"
+                f"<th class='num'>Sharpe</th><th class='num'>Max DD</th></tr></thead>"
+                f"<tbody>{rows}</tbody></table>", unsafe_allow_html=True)
+    st.markdown("<div class='mut' style='font-size:.78rem;margin-top:8px'>Strategy is gross/paper/monthly; "
                 "ETFs are net-of-fee, real fills, short histories (JEPQ '22+, QQQI '24+). "
-                "Shows design soundness, not a demonstrated live edge.</span>", unsafe_allow_html=True)
+                "Shows design soundness, not a demonstrated live edge.</div>", unsafe_allow_html=True)
 
 # ---- gate --------------------------------------------------------------------
 g = snap.get("gate", {})
