@@ -1,0 +1,398 @@
+{
+  "generated_at": "2026-06-14T10:52:31",
+  "status": "PAPER TRADING \u2014 HYPOTHETICAL, NO REAL CAPITAL",
+  "backtest": {
+    "period": "2007-2026 (hypothetical / backtested, monthly grain)",
+    "pricing": "Black-Scholes at skew-adjusted VXN (calibrated to live chain)",
+    "cagr": 0.153,
+    "sharpe": 1.03,
+    "max_dd": -0.286,
+    "skew": -0.9,
+    "bench_cagr": 0.165,
+    "bench_sharpe": 0.74,
+    "bench_dd": -0.507,
+    "bench_skew": -0.41
+  },
+  "regime": [
+    {
+      "regime": "Crash < -5%",
+      "months": 30,
+      "qqq": -0.084,
+      "strategy": -0.051,
+      "note": "loses less, still loses"
+    },
+    {
+      "regime": "Down 2-5%",
+      "months": 25,
+      "qqq": -0.034,
+      "strategy": -0.011,
+      "note": "wins"
+    },
+    {
+      "regime": "Flat \u00b12%",
+      "months": 61,
+      "qqq": 0.002,
+      "strategy": 0.009,
+      "note": "profitable in flat market"
+    },
+    {
+      "regime": "Up 2-5%",
+      "months": 56,
+      "qqq": 0.036,
+      "strategy": 0.032,
+      "note": "index wins slightly"
+    },
+    {
+      "regime": "Melt-up > 5%",
+      "months": 60,
+      "qqq": 0.076,
+      "strategy": 0.04,
+      "note": "capped"
+    }
+  ],
+  "benchmarks": [
+    {
+      "name": "Strategy (paper/backtest, gross)",
+      "cagr": 0.153,
+      "sharpe": 1.03,
+      "max_dd": -0.286
+    },
+    {
+      "name": "QQQ buy & hold",
+      "cagr": 0.165,
+      "sharpe": 0.74,
+      "max_dd": -0.507
+    },
+    {
+      "name": "QYLD (ATM buy-write ETF, net)",
+      "cagr": 0.083,
+      "sharpe": 0.49,
+      "max_dd": -0.237
+    },
+    {
+      "name": "JEPQ (since 2022, net)",
+      "cagr": 0.159,
+      "sharpe": 0.92,
+      "max_dd": -0.131
+    },
+    {
+      "name": "QQQI (since 2024, net)",
+      "cagr": 0.225,
+      "sharpe": 1.67,
+      "max_dd": -0.071
+    }
+  ],
+  "walkforward": {
+    "distinct_picks": 2,
+    "years": "2013-2025",
+    "verdict": "stable (not overfit)",
+    "wf_sharpe": 1.21,
+    "fixed_sharpe": 1.22
+  },
+  "account": {
+    "equity": 92414.73,
+    "cash": 347.03,
+    "inception_equity": 94395.55,
+    "inception_date": "2026-06-04",
+    "gate_baseline": 90033.87,
+    "total_return": -0.021,
+    "drawdown": 0.0216,
+    "peak_equity": 94459.35,
+    "dd_budget": 0.2,
+    "dd_budget_used": 0.1082,
+    "net_premium_captured": 1981.0,
+    "days_live": 10,
+    "positions": [
+      {
+        "symbol": "GLD",
+        "qty": 55.0,
+        "market_value": 21259.7,
+        "unrealized_pl": -1182.26,
+        "asset_class": "us_equity"
+      },
+      {
+        "symbol": "QQQ",
+        "qty": 100.0,
+        "market_value": 72134.0,
+        "unrealized_pl": -1659.04,
+        "asset_class": "us_equity"
+      },
+      {
+        "symbol": "QQQ260710C00736000",
+        "qty": -1.0,
+        "market_value": -1326.0,
+        "unrealized_pl": -41.0,
+        "asset_class": "us_option"
+      }
+    ],
+    "equity_curve": [
+      {
+        "date": "2026-03-12",
+        "equity": 100000.0
+      },
+      {
+        "date": "2026-03-13",
+        "equity": 100000.0
+      },
+      {
+        "date": "2026-03-16",
+        "equity": 99916.17
+      },
+      {
+        "date": "2026-03-17",
+        "equity": 99952.68
+      },
+      {
+        "date": "2026-03-18",
+        "equity": 99538.59
+      },
+      {
+        "date": "2026-03-19",
+        "equity": 99284.61
+      },
+      {
+        "date": "2026-03-20",
+        "equity": 99014.66
+      },
+      {
+        "date": "2026-03-23",
+        "equity": 98865.63
+      },
+      {
+        "date": "2026-03-24",
+        "equity": 98893.27
+      },
+      {
+        "date": "2026-03-25",
+        "equity": 99090.05
+      },
+      {
+        "date": "2026-03-26",
+        "equity": 98811.2
+      },
+      {
+        "date": "2026-03-27",
+        "equity": 98880.09
+      },
+      {
+        "date": "2026-03-30",
+        "equity": 98862.66
+      },
+      {
+        "date": "2026-03-31",
+        "equity": 99220.79
+      },
+      {
+        "date": "2026-04-01",
+        "equity": 99394.37
+      },
+      {
+        "date": "2026-04-02",
+        "equity": 99073.55
+      },
+      {
+        "date": "2026-04-06",
+        "equity": 99065.88
+      },
+      {
+        "date": "2026-04-07",
+        "equity": 100373.04
+      },
+      {
+        "date": "2026-04-08",
+        "equity": 98481.07
+      },
+      {
+        "date": "2026-04-09",
+        "equity": 100530.89
+      },
+      {
+        "date": "2026-04-10",
+        "equity": 99026.16
+      },
+      {
+        "date": "2026-04-13",
+        "equity": 98746.58
+      },
+      {
+        "date": "2026-04-14",
+        "equity": 100885.47
+      },
+      {
+        "date": "2026-04-15",
+        "equity": 101717.3
+      },
+      {
+        "date": "2026-04-16",
+        "equity": 100924.18
+      },
+      {
+        "date": "2026-04-17",
+        "equity": 104005.65
+      },
+      {
+        "date": "2026-04-20",
+        "equity": 98825.82
+      },
+      {
+        "date": "2026-04-21",
+        "equity": 98880.58
+      },
+      {
+        "date": "2026-04-22",
+        "equity": 98746.72
+      },
+      {
+        "date": "2026-04-23",
+        "equity": 98197.51
+      },
+      {
+        "date": "2026-04-24",
+        "equity": 98444.63
+      },
+      {
+        "date": "2026-04-27",
+        "equity": 98215.67
+      },
+      {
+        "date": "2026-04-28",
+        "equity": 97969.37
+      },
+      {
+        "date": "2026-04-29",
+        "equity": 97511.24
+      },
+      {
+        "date": "2026-04-30",
+        "equity": 97501.88
+      },
+      {
+        "date": "2026-05-01",
+        "equity": 97645.75
+      },
+      {
+        "date": "2026-05-04",
+        "equity": 97645.75
+      },
+      {
+        "date": "2026-05-05",
+        "equity": 98775.96
+      },
+      {
+        "date": "2026-05-06",
+        "equity": 98298.88
+      },
+      {
+        "date": "2026-05-07",
+        "equity": 97162.29
+      },
+      {
+        "date": "2026-05-08",
+        "equity": 97706.99
+      },
+      {
+        "date": "2026-05-11",
+        "equity": 97579.54
+      },
+      {
+        "date": "2026-05-12",
+        "equity": 97509.29
+      },
+      {
+        "date": "2026-05-13",
+        "equity": 97541.45
+      },
+      {
+        "date": "2026-05-14",
+        "equity": 97338.12
+      },
+      {
+        "date": "2026-05-15",
+        "equity": 95984.34
+      },
+      {
+        "date": "2026-05-18",
+        "equity": 94682.44
+      },
+      {
+        "date": "2026-05-19",
+        "equity": 94639.13
+      },
+      {
+        "date": "2026-05-20",
+        "equity": 94888.67
+      },
+      {
+        "date": "2026-05-21",
+        "equity": 94841.74
+      },
+      {
+        "date": "2026-05-22",
+        "equity": 94381.0
+      },
+      {
+        "date": "2026-05-26",
+        "equity": 94705.63
+      },
+      {
+        "date": "2026-05-27",
+        "equity": 94703.97
+      },
+      {
+        "date": "2026-05-28",
+        "equity": 94716.27
+      },
+      {
+        "date": "2026-05-29",
+        "equity": 94721.69
+      },
+      {
+        "date": "2026-06-01",
+        "equity": 95052.54
+      },
+      {
+        "date": "2026-06-02",
+        "equity": 95052.54
+      },
+      {
+        "date": "2026-06-03",
+        "equity": 95193.66
+      },
+      {
+        "date": "2026-06-04",
+        "equity": 94525.1
+      },
+      {
+        "date": "2026-06-05",
+        "equity": 91375.75
+      },
+      {
+        "date": "2026-06-08",
+        "equity": 92382.04
+      },
+      {
+        "date": "2026-06-09",
+        "equity": 91848.92
+      },
+      {
+        "date": "2026-06-10",
+        "equity": 89610.93
+      },
+      {
+        "date": "2026-06-11",
+        "equity": 92501.63
+      },
+      {
+        "date": "2026-06-12",
+        "equity": 92459.73
+      }
+    ]
+  },
+  "gate": {
+    "day": 4,
+    "of": 30,
+    "days_left": 26,
+    "window": "2026-06-10 to 2026-07-10",
+    "purpose": "operational validation only (fills, rebalancing, management) \u2014 not economic/tail validation"
+  }
+}
