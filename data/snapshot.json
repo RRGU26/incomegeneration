@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T16:45:02",
+  "generated_at": "2026-07-14T16:45:07",
   "status": "PAPER TRADING \u2014 HYPOTHETICAL, NO REAL CAPITAL",
   "backtest": {
     "period": "2007-2026 (hypothetical / backtested, monthly grain)",
@@ -90,8 +90,8 @@
     "fixed_sharpe": 1.22
   },
   "account": {
-    "equity": 92327.4,
-    "cash": 92327.4,
+    "equity": 92327.32,
+    "cash": 92327.32,
     "inception_equity": 91848.92,
     "inception_date": "2026-06-09",
     "gate_baseline": 90033.87,
@@ -101,7 +101,7 @@
     "dd_budget": 0.2,
     "dd_budget_used": 0.1094,
     "net_premium_captured": 1216.0,
-    "days_live": 34,
+    "days_live": 35,
     "positions": [],
     "equity_curve": [
       {
@@ -191,11 +191,15 @@
       {
         "date": "2026-07-10",
         "equity": 93633.58
+      },
+      {
+        "date": "2026-07-13",
+        "equity": 92327.32
       }
     ]
   },
   "gate": {
-    "day": 33,
+    "day": 34,
     "of": 30,
     "days_left": 0,
     "window": "2026-06-10 to 2026-07-10",
