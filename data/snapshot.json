@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T16:45:02",
+  "generated_at": "2026-07-20T16:45:03",
   "status": "PAPER TRADING \u2014 HYPOTHETICAL, NO REAL CAPITAL",
   "backtest": {
     "period": "2007-2026 (hypothetical / backtested, monthly grain)",
@@ -90,38 +90,38 @@
     "fixed_sharpe": 1.22
   },
   "account": {
-    "equity": 90957.83,
-    "cash": 1116.8,
+    "equity": 91039.26,
+    "cash": 1116.76,
     "inception_equity": 91848.92,
     "inception_date": "2026-06-09",
     "gate_baseline": 90033.87,
-    "total_return": -0.0097,
-    "drawdown": 0.0364,
+    "total_return": -0.0088,
+    "drawdown": 0.0355,
     "peak_equity": 94392.28,
     "dd_budget": 0.2,
-    "dd_budget_used": 0.1819,
+    "dd_budget_used": 0.1776,
     "net_premium_captured": 2215.0,
-    "days_live": 38,
+    "days_live": 41,
     "positions": [
       {
         "symbol": "GLD",
         "qty": 58.0,
-        "market_value": 21345.03,
-        "unrealized_pl": 95.54,
+        "market_value": 21329.5,
+        "unrealized_pl": 80.01,
         "asset_class": "us_equity"
       },
       {
         "symbol": "QQQ",
         "qty": 100.0,
-        "market_value": 69542.0,
-        "unrealized_pl": -1418.0,
+        "market_value": 69562.0,
+        "unrealized_pl": -1398.0,
         "asset_class": "us_equity"
       },
       {
         "symbol": "QQQ260821C00722000",
         "qty": -1.0,
-        "market_value": -1046.0,
-        "unrealized_pl": -47.0,
+        "market_value": -969.0,
+        "unrealized_pl": 30.0,
         "asset_class": "us_option"
       }
     ],
@@ -229,11 +229,15 @@
       {
         "date": "2026-07-16",
         "equity": 91879.5
+      },
+      {
+        "date": "2026-07-17",
+        "equity": 91005.54
       }
     ]
   },
   "gate": {
-    "day": 37,
+    "day": 40,
     "of": 30,
     "days_left": 0,
     "window": "2026-06-10 to 2026-07-10",
