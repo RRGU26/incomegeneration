@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-09T07:59:12",
+  "generated_at": "2026-08-10T16:15:05",
   "status": "PAPER TRADING \u2014 HYPOTHETICAL, NO REAL CAPITAL",
   "backtest": {
     "period": "2007-2026 (hypothetical / backtested, daily grain, net of option costs)",
@@ -91,14 +91,14 @@
     "fixed_sharpe": 1.22
   },
   "account": {
-    "equity": 335000.0,
-    "cash": 335000.0,
+    "equity": 336054.39,
+    "cash": 1463.79,
     "inception_equity": 335000.0,
     "inception_date": "2026-06-09",
     "gate_baseline": 90033.87,
-    "total_return": 0.0,
+    "total_return": 0.0031,
     "drawdown": 0.0,
-    "peak_equity": 335000.0,
+    "peak_equity": 336054.39,
     "dd_alert": 0.2,
     "dd_plan": 0.38,
     "dd_plan_used": 0.0,
@@ -106,8 +106,23 @@
     "dd_halt": null,
     "only_drawdown_control": "gold sleeve 35%",
     "net_premium_captured": 0.0,
-    "days_live": 61,
-    "positions": [],
+    "days_live": 62,
+    "positions": [
+      {
+        "symbol": "GLD",
+        "qty": 294.0,
+        "market_value": 118305.6,
+        "unrealized_pl": 1370.58,
+        "asset_class": "us_equity"
+      },
+      {
+        "symbol": "QQQ",
+        "qty": 300.0,
+        "market_value": 216285.0,
+        "unrealized_pl": -316.19,
+        "asset_class": "us_equity"
+      }
+    ],
     "equity_curve": [
       {
         "date": "2026-08-06",
@@ -120,7 +135,7 @@
     ]
   },
   "gate": {
-    "day": 60,
+    "day": 61,
     "of": 30,
     "days_left": 0,
     "window": "2026-06-10 to 2026-07-10",
