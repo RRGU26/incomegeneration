@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T16:10:43",
+  "generated_at": "2026-08-16T08:01:56",
   "status": "PAPER TRADING \u2014 HYPOTHETICAL, NO REAL CAPITAL",
   "backtest": {
     "period": "2007-2026 (hypothetical / backtested, daily grain, net of option costs)",
@@ -106,7 +106,7 @@
     "dd_halt": null,
     "only_drawdown_control": "gold sleeve 35%",
     "net_premium_captured": 519.0,
-    "days_live": 7,
+    "days_live": 8,
     "positions": [
       {
         "symbol": "GLD",
