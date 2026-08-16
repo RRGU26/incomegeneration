@@ -84,9 +84,20 @@ c = st.columns(5)
 ret = acc.get("total_return", 0); dd = acc.get("drawdown", 0)
 kpi(c[0], "Equity", f"${acc.get('equity',0):,.0f}", f"test start ${acc.get('inception_equity',0):,.0f}")
 kpi(c[1], "Return since test start", pct(ret), f"day {acc.get('days_live',0)} · judge over months", cls(ret))
-kpi(c[2], "Drawdown", pct(-abs(dd)), f"{acc.get('dd_budget_used',0)*100:.0f}% of 20% budget", cls(-dd))
+_plan = acc.get("dd_plan", 0.38)
+kpi(c[2], "Drawdown", pct(-abs(dd)),
+    f"{acc.get('dd_plan_used', 0) * 100:.0f}% of {_plan * 100:.0f}% plan", cls(-dd))
 kpi(c[3], "Premium captured", f"${acc.get('net_premium_captured',0):,.0f}", "since test start", "pos")
 kpi(c[4], "Cash", f"${acc.get('cash',0):,.0f}", "settles into GLD")
+
+if not acc.get("kill_switch_armed", True):
+    st.warning(
+        f"**No automated stop.** The drawdown kill-switch is disarmed: nothing "
+        f"sells automatically at any loss level. A {acc.get('dd_alert', 0.20) * 100:.0f}% "
+        f"drawdown raises an alert for a human decision only. The "
+        f"{acc.get('only_drawdown_control', 'gold sleeve')} is the sole drawdown "
+        f"control, and it dampens rather than stops. Planning drawdown is "
+        f"{_plan * 100:.0f}%.")
 
 # ---- equity curve ------------------------------------------------------------
 curve = acc.get("equity_curve", [])
@@ -156,5 +167,7 @@ with right:
 # ---- gate --------------------------------------------------------------------
 g = snap.get("gate", {})
 st.markdown("<div class='sect'>Validation status</div>", unsafe_allow_html=True)
-st.markdown(f"<span class='mut'>30-day operational gate · day {g.get('day','?')} of {g.get('of',30)} "
-            f"({g.get('window','')}). {g.get('purpose','')}</span>", unsafe_allow_html=True)
+_gs = g.get("status") or f"day {g.get('day','?')} of {g.get('of',30)}"
+st.markdown(f"<span class='mut'>30-day operational gate · {_gs} "
+            f"({g.get('window','')}). {g.get('purpose','')}"
+            f"{'<br>' + g['note'] if g.get('note') else ''}</span>", unsafe_allow_html=True)

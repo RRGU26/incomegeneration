@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T16:45:04",
+  "generated_at": "2026-08-15T16:10:43",
   "status": "PAPER TRADING \u2014 HYPOTHETICAL, NO REAL CAPITAL",
   "backtest": {
     "period": "2007-2026 (hypothetical / backtested, daily grain, net of option costs)",
@@ -91,14 +91,14 @@
     "fixed_sharpe": 1.22
   },
   "account": {
-    "equity": 339024.75,
+    "equity": 339098.73,
     "cash": 1982.61,
     "inception_equity": 335000.0,
-    "inception_date": "2026-06-09",
+    "inception_date": "2026-08-08",
     "gate_baseline": 90033.87,
-    "total_return": 0.012,
+    "total_return": 0.0122,
     "drawdown": 0.0,
-    "peak_equity": 339024.75,
+    "peak_equity": 339104.73,
     "dd_alert": 0.2,
     "dd_plan": 0.38,
     "dd_plan_used": 0.0,
@@ -106,20 +106,20 @@
     "dd_halt": null,
     "only_drawdown_control": "gold sleeve 35%",
     "net_premium_captured": 519.0,
-    "days_live": 66,
+    "days_live": 7,
     "positions": [
       {
         "symbol": "GLD",
         "qty": 294.0,
-        "market_value": 117985.14,
-        "unrealized_pl": 1050.12,
+        "market_value": 118035.12,
+        "unrealized_pl": 1100.1,
         "asset_class": "us_equity"
       },
       {
         "symbol": "QQQ",
         "qty": 300.0,
-        "market_value": 219297.0,
-        "unrealized_pl": 2695.81,
+        "market_value": 219321.0,
+        "unrealized_pl": 2719.81,
         "asset_class": "us_equity"
       },
       {
@@ -131,14 +131,6 @@
       }
     ],
     "equity_curve": [
-      {
-        "date": "2026-08-06",
-        "equity": 335000.0
-      },
-      {
-        "date": "2026-08-07",
-        "equity": 335000.0
-      },
       {
         "date": "2026-08-10",
         "equity": 336071.54
@@ -154,14 +146,20 @@
       {
         "date": "2026-08-13",
         "equity": 338393.85
+      },
+      {
+        "date": "2026-08-14",
+        "equity": 339104.73
       }
     ]
   },
   "gate": {
-    "day": 65,
+    "day": 30,
     "of": 30,
     "days_left": 0,
     "window": "2026-06-10 to 2026-07-10",
-    "purpose": "operational validation only (fills, rebalancing, management) \u2014 not economic/tail validation"
+    "status": "CLOSED 2026-07-10 \u2014 operational criteria met",
+    "purpose": "operational validation only (fills, rebalancing, management) \u2014 not economic/tail validation",
+    "note": "Superseded. The account was replaced 2026-08-08 and the config changed 2026-08-07/08 (3% OTM, 12-18 DTE, 35% gold, kill-switch disarmed). The track record above starts at the inception date shown (2026-08-08), not at this window."
   }
 }
