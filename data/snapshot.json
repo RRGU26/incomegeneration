@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T16:15:01",
+  "generated_at": "2026-08-27T16:15:00",
   "status": "PAPER TRADING \u2014 HYPOTHETICAL, NO REAL CAPITAL",
   "backtest": {
     "period": "2007-2026 (hypothetical / backtested, daily grain, net of option costs)",
@@ -91,24 +91,99 @@
     "fixed_sharpe": 1.22
   },
   "account": {
-    "equity": 0.0,
-    "cash": 0.0,
+    "equity": 341770.3,
+    "cash": 2588.44,
     "inception_equity": 335000.0,
     "inception_date": "2026-08-08",
     "gate_baseline": 90033.87,
-    "total_return": -1.0,
-    "drawdown": 0,
-    "peak_equity": 0.0,
+    "total_return": 0.0202,
+    "drawdown": 0.0,
+    "peak_equity": 341770.3,
     "dd_alert": 0.2,
     "dd_plan": 0.38,
     "dd_plan_used": 0.0,
     "kill_switch_armed": false,
     "dd_halt": null,
     "only_drawdown_control": "gold sleeve 35%",
-    "net_premium_captured": 0.0,
-    "days_live": 18,
-    "positions": [],
-    "equity_curve": []
+    "net_premium_captured": 1125.0,
+    "days_live": 19,
+    "positions": [
+      {
+        "symbol": "GLD",
+        "qty": 294.0,
+        "market_value": 124123.86,
+        "unrealized_pl": 7188.84,
+        "asset_class": "us_equity"
+      },
+      {
+        "symbol": "QQQ",
+        "qty": 300.0,
+        "market_value": 215985.0,
+        "unrealized_pl": -616.19,
+        "asset_class": "us_equity"
+      },
+      {
+        "symbol": "QQQ260908C00733000",
+        "qty": -3.0,
+        "market_value": -927.0,
+        "unrealized_pl": -321.0,
+        "asset_class": "us_option"
+      }
+    ],
+    "equity_curve": [
+      {
+        "date": "2026-08-10",
+        "equity": 336071.54
+      },
+      {
+        "date": "2026-08-11",
+        "equity": 334881.02
+      },
+      {
+        "date": "2026-08-12",
+        "equity": 337620.26
+      },
+      {
+        "date": "2026-08-13",
+        "equity": 338393.85
+      },
+      {
+        "date": "2026-08-14",
+        "equity": 339104.73
+      },
+      {
+        "date": "2026-08-17",
+        "equity": 340031.67
+      },
+      {
+        "date": "2026-08-18",
+        "equity": 334382.31
+      },
+      {
+        "date": "2026-08-19",
+        "equity": 338460.57
+      },
+      {
+        "date": "2026-08-20",
+        "equity": 337345.05
+      },
+      {
+        "date": "2026-08-21",
+        "equity": 340479.45
+      },
+      {
+        "date": "2026-08-24",
+        "equity": 339322.47
+      },
+      {
+        "date": "2026-08-25",
+        "equity": 341051.19
+      },
+      {
+        "date": "2026-08-26",
+        "equity": 339369.52
+      }
+    ]
   },
   "gate": {
     "day": 30,
