@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T16:15:00",
+  "generated_at": "2026-09-24T16:45:03",
   "status": "PAPER TRADING \u2014 HYPOTHETICAL, NO REAL CAPITAL",
   "backtest": {
     "period": "2007-2026 (hypothetical / backtested, daily grain, net of option costs)",
@@ -91,7 +91,7 @@
     "fixed_sharpe": 1.22
   },
   "account": {
-    "equity": 338573.07,
+    "equity": 338576.07,
     "cash": 2300.07,
     "inception_equity": 335000.0,
     "inception_date": "2026-08-08",
@@ -118,8 +118,8 @@
       {
         "symbol": "QQQ",
         "qty": 300.0,
-        "market_value": 221949.0,
-        "unrealized_pl": 5347.81,
+        "market_value": 221952.0,
+        "unrealized_pl": 5350.81,
         "asset_class": "us_equity"
       },
       {
