@@ -160,7 +160,7 @@ with right:
     st.markdown(f"<table class='tbl'><thead><tr><th>Strategy / benchmark</th><th class='num'>CAGR</th>"
                 f"<th class='num'>Sharpe</th><th class='num'>Max DD</th></tr></thead>"
                 f"<tbody>{rows}</tbody></table>", unsafe_allow_html=True)
-    st.markdown("<div class='mut' style='font-size:.78rem;margin-top:8px'>Strategy is gross/paper/monthly; "
+    st.markdown("<div class='mut' style='font-size:.78rem;margin-top:8px'>Strategy is backtested, daily grain, net of trading costs, pre-tax; "
                 "ETFs are net-of-fee, real fills, short histories (JEPQ '22+, QQQI '24+). "
                 "Shows design soundness, not a demonstrated live edge.</div>", unsafe_allow_html=True)
 

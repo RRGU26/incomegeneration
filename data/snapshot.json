@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-10-06T12:52:26",
+  "generated_at": "2026-10-06T15:46:40",
   "status": "PAPER TRADING \u2014 HYPOTHETICAL, NO REAL CAPITAL",
   "backtest": {
     "period": "2007-2026 (hypothetical / backtested, daily grain, net of option costs)",
-    "pricing": "Black-Scholes at VXN x measured QQQ chain skew (0.859 at this strike/tenor)",
+    "pricing": "Black-Scholes at VXN x measured QQQ chain skew; engine buyback rule and band",
     "config": "3% OTM, 30-38 DTE, 35% gold, kill-switch disarmed",
-    "cagr": 0.1332,
-    "sharpe": 0.76,
-    "max_dd": -0.31,
-    "skew": -0.76,
+    "cagr": 0.143,
+    "sharpe": 0.82,
+    "max_dd": -0.329,
+    "skew": -0.52,
     "bench_cagr": 0.165,
     "bench_sharpe": 0.74,
     "bench_dd": -0.507,
@@ -19,7 +19,7 @@
       "regime": "Crash < -5%",
       "months": 31,
       "qqq": -0.081,
-      "strategy": -0.043,
+      "strategy": -0.037,
       "note": "loses less, still loses"
     },
     {
@@ -33,7 +33,7 @@
       "regime": "Flat \u00b12%",
       "months": 65,
       "qqq": 0.001,
-      "strategy": 0.005,
+      "strategy": 0.004,
       "note": "profitable in flat market"
     },
     {
@@ -54,9 +54,9 @@
   "benchmarks": [
     {
       "name": "Strategy (paper/backtest, shipped config)",
-      "cagr": 0.1332,
-      "sharpe": 0.76,
-      "max_dd": -0.31
+      "cagr": 0.143,
+      "sharpe": 0.82,
+      "max_dd": -0.329
     },
     {
       "name": "QQQ buy & hold",
@@ -91,17 +91,17 @@
     "fixed_sharpe": 1.22
   },
   "account": {
-    "equity": 341776.66,
+    "equity": 341853.4,
     "cash": 1399.9,
     "inception_equity": 335000.0,
     "inception_date": "2026-08-08",
     "gate_baseline": 90033.87,
-    "total_return": 0.0202,
-    "drawdown": 0.0022,
+    "total_return": 0.0205,
+    "drawdown": 0.002,
     "peak_equity": 342535.85,
     "dd_alert": 0.2,
     "dd_plan": 0.38,
-    "dd_plan_used": 0.0058,
+    "dd_plan_used": 0.0052,
     "kill_switch_armed": false,
     "dd_halt": null,
     "only_drawdown_control": "gold sleeve 35%",
@@ -111,15 +111,15 @@
       {
         "symbol": "GLD",
         "qty": 294.0,
-        "market_value": 112025.76,
-        "unrealized_pl": -4909.26,
+        "market_value": 112381.5,
+        "unrealized_pl": -4553.52,
         "asset_class": "us_equity"
       },
       {
         "symbol": "QQQ",
         "qty": 300.0,
-        "market_value": 228351.0,
-        "unrealized_pl": 11749.81,
+        "market_value": 228074.97,
+        "unrealized_pl": 11473.78,
         "asset_class": "us_equity"
       }
     ],
