@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-10-05T16:45:02",
+  "generated_at": "2026-10-06T12:52:26",
   "status": "PAPER TRADING \u2014 HYPOTHETICAL, NO REAL CAPITAL",
   "backtest": {
     "period": "2007-2026 (hypothetical / backtested, daily grain, net of option costs)",
-    "pricing": "Black-Scholes at skew-adjusted VXN, measured QQQ term structure",
-    "config": "3% OTM, 12-18 DTE, 35% gold, kill-switch disarmed",
-    "cagr": 0.1474,
-    "sharpe": 0.84,
-    "max_dd": -0.316,
-    "skew": -0.9,
+    "pricing": "Black-Scholes at VXN x measured QQQ chain skew (0.859 at this strike/tenor)",
+    "config": "3% OTM, 30-38 DTE, 35% gold, kill-switch disarmed",
+    "cagr": 0.1332,
+    "sharpe": 0.76,
+    "max_dd": -0.31,
+    "skew": -0.76,
     "bench_cagr": 0.165,
     "bench_sharpe": 0.74,
     "bench_dd": -0.507,
@@ -17,46 +17,46 @@
   "regime": [
     {
       "regime": "Crash < -5%",
-      "months": 30,
-      "qqq": -0.084,
-      "strategy": -0.051,
+      "months": 31,
+      "qqq": -0.081,
+      "strategy": -0.043,
       "note": "loses less, still loses"
     },
     {
       "regime": "Down 2-5%",
-      "months": 25,
-      "qqq": -0.034,
-      "strategy": -0.011,
+      "months": 24,
+      "qqq": -0.03,
+      "strategy": -0.009,
       "note": "wins"
     },
     {
       "regime": "Flat \u00b12%",
-      "months": 61,
-      "qqq": 0.002,
-      "strategy": 0.009,
+      "months": 65,
+      "qqq": 0.001,
+      "strategy": 0.005,
       "note": "profitable in flat market"
     },
     {
       "regime": "Up 2-5%",
-      "months": 56,
-      "qqq": 0.036,
-      "strategy": 0.032,
-      "note": "index wins slightly"
+      "months": 53,
+      "qqq": 0.034,
+      "strategy": 0.023,
+      "note": "index wins"
     },
     {
       "regime": "Melt-up > 5%",
       "months": 60,
-      "qqq": 0.076,
-      "strategy": 0.04,
+      "qqq": 0.077,
+      "strategy": 0.043,
       "note": "capped"
     }
   ],
   "benchmarks": [
     {
       "name": "Strategy (paper/backtest, shipped config)",
-      "cagr": 0.1474,
-      "sharpe": 0.84,
-      "max_dd": -0.316
+      "cagr": 0.1332,
+      "sharpe": 0.76,
+      "max_dd": -0.31
     },
     {
       "name": "QQQ buy & hold",
@@ -91,43 +91,36 @@
     "fixed_sharpe": 1.22
   },
   "account": {
-    "equity": 340319.16,
-    "cash": 2299.98,
+    "equity": 341776.66,
+    "cash": 1399.9,
     "inception_equity": 335000.0,
     "inception_date": "2026-08-08",
     "gate_baseline": 90033.87,
-    "total_return": 0.0159,
-    "drawdown": 0.0065,
+    "total_return": 0.0202,
+    "drawdown": 0.0022,
     "peak_equity": 342535.85,
     "dd_alert": 0.2,
     "dd_plan": 0.38,
-    "dd_plan_used": 0.017,
+    "dd_plan_used": 0.0058,
     "kill_switch_armed": false,
     "dd_halt": null,
     "only_drawdown_control": "gold sleeve 35%",
-    "net_premium_captured": 837.0,
-    "days_live": 58,
+    "net_premium_captured": -63.0,
+    "days_live": 59,
     "positions": [
       {
         "symbol": "GLD",
         "qty": 294.0,
-        "market_value": 111564.18,
-        "unrealized_pl": -5370.84,
+        "market_value": 112025.76,
+        "unrealized_pl": -4909.26,
         "asset_class": "us_equity"
       },
       {
         "symbol": "QQQ",
         "qty": 300.0,
-        "market_value": 226830.0,
-        "unrealized_pl": 10228.81,
+        "market_value": 228351.0,
+        "unrealized_pl": 11749.81,
         "asset_class": "us_equity"
-      },
-      {
-        "symbol": "QQQ261006C00759000",
-        "qty": -3.0,
-        "market_value": -375.0,
-        "unrealized_pl": 153.0,
-        "asset_class": "us_option"
       }
     ],
     "equity_curve": [
@@ -286,6 +279,10 @@
       {
         "date": "2026-10-02",
         "equity": 338707.14
+      },
+      {
+        "date": "2026-10-05",
+        "equity": 340417.68
       }
     ]
   },
@@ -296,6 +293,6 @@
     "window": "2026-06-10 to 2026-07-10",
     "status": "CLOSED 2026-07-10 \u2014 operational criteria met",
     "purpose": "operational validation only (fills, rebalancing, management) \u2014 not economic/tail validation",
-    "note": "Superseded. The account was replaced 2026-08-08 and the config changed 2026-08-07/08 (3% OTM, 12-18 DTE, 35% gold, kill-switch disarmed). The track record above starts at the inception date shown (2026-08-08), not at this window."
+    "note": "Superseded. The account was replaced 2026-08-08 and the config changed 2026-08-07/08 (3% OTM, 35% gold, kill-switch disarmed). The track record above starts at the inception date shown (2026-08-08), not at this window."
   }
 }
