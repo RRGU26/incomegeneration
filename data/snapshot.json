@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T16:15:05",
+  "generated_at": "2026-10-09T16:45:03",
   "status": "PAPER TRADING \u2014 HYPOTHETICAL, NO REAL CAPITAL",
   "strategy": {
     "name": "Diversified Trend Portfolio",
@@ -95,13 +95,13 @@
     "The control is tracked virtually at market prices (no costs), rebalanced on the first update of each month, because the paper account can hold only one book. It starts at the start day's closing prices, while the account starts at the 10 AM run."
   ],
   "account": {
-    "equity": 340573.04,
+    "equity": 340620.62,
     "cash": 3769.64,
     "positions": [
       {
         "symbol": "GLD",
         "qty": 294.0,
-        "market_value": 113072.4,
+        "market_value": 113092.98,
         "weight": 0.332,
         "target": 0.1,
         "asset_class": "us_equity"
@@ -109,7 +109,7 @@
       {
         "symbol": "QQQ",
         "qty": 300.0,
-        "market_value": 225381.0,
+        "market_value": 225408.0,
         "weight": 0.6618,
         "target": 0.0,
         "asset_class": "us_equity"
