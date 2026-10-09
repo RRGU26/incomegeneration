@@ -1,313 +1,130 @@
 {
-  "generated_at": "2026-10-08T16:45:04",
+  "generated_at": "2026-10-09T16:15:05",
   "status": "PAPER TRADING \u2014 HYPOTHETICAL, NO REAL CAPITAL",
-  "backtest": {
-    "period": "2007-2026 (hypothetical / backtested, daily grain, net of option costs)",
-    "pricing": "Black-Scholes at VXN x measured QQQ chain skew; engine buyback rule and band",
-    "config": "3% OTM, 30-38 DTE, 35% gold, kill-switch disarmed",
-    "cagr": 0.143,
-    "sharpe": 0.82,
-    "max_dd": -0.329,
-    "skew": -0.52,
-    "bench_cagr": 0.165,
-    "bench_sharpe": 0.74,
-    "bench_dd": -0.507,
-    "bench_skew": -0.41
-  },
-  "regime": [
-    {
-      "regime": "Crash < -5%",
-      "months": 31,
-      "qqq": -0.081,
-      "strategy": -0.037,
-      "note": "loses less, still loses"
+  "strategy": {
+    "name": "Diversified Trend Portfolio",
+    "version": 1,
+    "weights": {
+      "VTI": 0.24,
+      "VEU": 0.16,
+      "GLD": 0.1,
+      "IEF": 0.1,
+      "BIL": 0.2,
+      "DBMF": 0.1,
+      "KMLM": 0.1
     },
-    {
-      "regime": "Down 2-5%",
-      "months": 24,
-      "qqq": -0.03,
-      "strategy": -0.009,
-      "note": "wins"
+    "control_weights": {
+      "VTI": 0.24,
+      "VEU": 0.16,
+      "GLD": 0.1,
+      "IEF": 0.1,
+      "BIL": 0.4
     },
-    {
-      "regime": "Flat \u00b12%",
-      "months": 65,
-      "qqq": 0.001,
-      "strategy": 0.004,
-      "note": "profitable in flat market"
-    },
-    {
-      "regime": "Up 2-5%",
-      "months": 53,
-      "qqq": 0.034,
-      "strategy": 0.023,
-      "note": "index wins"
-    },
-    {
-      "regime": "Melt-up > 5%",
-      "months": 60,
-      "qqq": 0.077,
-      "strategy": 0.043,
-      "note": "capped"
+    "execution": "ENABLED",
+    "alerts": {
+      "drawdown_watch": 0.1,
+      "drawdown_warning": 0.15,
+      "drawdown_review": 0.2
     }
-  ],
-  "benchmarks": [
-    {
-      "name": "Strategy (paper/backtest, shipped config)",
-      "cagr": 0.143,
-      "sharpe": 0.82,
-      "max_dd": -0.329
-    },
-    {
-      "name": "QQQ buy & hold",
-      "cagr": 0.165,
-      "sharpe": 0.74,
-      "max_dd": -0.507
-    },
-    {
-      "name": "QYLD (ATM buy-write ETF, net)",
-      "cagr": 0.083,
-      "sharpe": 0.49,
-      "max_dd": -0.237
-    },
-    {
-      "name": "JEPQ (since 2022, net)",
-      "cagr": 0.159,
-      "sharpe": 0.92,
-      "max_dd": -0.131
-    },
-    {
-      "name": "QQQI (since 2024, net)",
-      "cagr": 0.225,
-      "sharpe": 1.67,
-      "max_dd": -0.071
-    }
-  ],
-  "walkforward": {
-    "distinct_picks": 2,
-    "years": "2013-2025",
-    "verdict": "stable (not overfit)",
-    "wf_sharpe": 1.21,
-    "fixed_sharpe": 1.22
   },
+  "history": {
+    "period": "2021-01-04 to 2026-10-09, real fund prices, pre-tax, monthly rebalance",
+    "rows": [
+      {
+        "name": "Diversified Trend v1",
+        "cagr": 0.0889,
+        "max_dd": -0.081,
+        "worst_year": -0.039,
+        "cagr_2025_26": 0.1521,
+        "dd_2025_26": -0.071
+      },
+      {
+        "name": "Control (BIL instead of DBMF/KMLM)",
+        "cagr": 0.0757,
+        "max_dd": -0.135,
+        "worst_year": -0.081,
+        "cagr_2025_26": 0.1321,
+        "dd_2025_26": -0.061
+      },
+      {
+        "name": "QQQ buy & hold",
+        "cagr": 0.1736,
+        "max_dd": -0.351,
+        "worst_year": -0.326,
+        "cagr_2025_26": 0.2512,
+        "dd_2025_26": -0.228
+      }
+    ],
+    "years": {
+      "Diversified Trend v1": {
+        "2021": 0.084,
+        "2022": -0.039,
+        "2023": 0.1,
+        "2024": 0.107,
+        "2025": 0.174,
+        "2026 YTD": 0.095
+      },
+      "Control": {
+        "2021": 0.065,
+        "2022": -0.081,
+        "2023": 0.125,
+        "2024": 0.111,
+        "2025": 0.172,
+        "2026 YTD": 0.063
+      },
+      "QQQ": {
+        "2021": 0.292,
+        "2022": -0.326,
+        "2023": 0.549,
+        "2024": 0.256,
+        "2025": 0.208,
+        "2026 YTD": 0.226
+      }
+    }
+  },
+  "disclosures": [
+    "The allocation was selected using 2022-2024 data \u2014 the period that includes 2022, when managed futures did unusually well. Only 2025 onward is out-of-sample, about 21 months. The funds' shared history starts in 2021, so there is no test through 2008 or any comparable crash.",
+    "DBMF and KMLM are managed-futures funds. They use derivatives and can face leverage, manager changes, trend whipsaws and gap risk.",
+    "The 10% / 15% / 20% drawdown lines trigger a human review only. Nothing sells automatically, and they are not a loss limit. Neither the $50,000-a-year earnings objective nor a 20% maximum decline is a dependable future result.",
+    "Historical figures are before tax. The account is taxable; monthly rebalancing and bond / T-bill income would reduce after-tax results.",
+    "This account ran a covered-call strategy until the Trend v1 start date shown. Results here count only from that date."
+  ],
+  "deviations": [
+    "Started with the paper account's value (about $340,000), not the $500,000 in the protocol. Weights are unchanged; dollar amounts scale.",
+    "The protocol adds $5,000 at each month-end. A paper account cannot receive deposits, so contributions are counted virtually and are NOT in the account. Earnings are shown excluding contributions, as the objective defines them.",
+    "The control is tracked virtually at market prices (no costs), rebalanced on the first update of each month, because the paper account can hold only one book. It starts at the start day's closing prices, while the account starts at the 10 AM run."
+  ],
   "account": {
-    "equity": 337920.5,
+    "equity": 340573.04,
     "cash": 3769.64,
-    "inception_equity": 335000.0,
-    "inception_date": "2026-08-08",
-    "gate_baseline": 90033.87,
-    "total_return": 0.0087,
-    "drawdown": 0.0135,
-    "peak_equity": 342535.85,
-    "dd_alert": 0.2,
-    "dd_plan": 0.38,
-    "dd_plan_used": 0.0355,
-    "kill_switch_armed": false,
-    "dd_halt": null,
-    "only_drawdown_control": "gold sleeve 35%",
-    "net_premium_captured": 2307.0,
-    "days_live": 61,
     "positions": [
       {
         "symbol": "GLD",
         "qty": 294.0,
-        "market_value": 111334.86,
-        "unrealized_pl": -5600.16,
+        "market_value": 113072.4,
+        "weight": 0.332,
+        "target": 0.1,
         "asset_class": "us_equity"
       },
       {
         "symbol": "QQQ",
         "qty": 300.0,
-        "market_value": 224490.0,
-        "unrealized_pl": 7888.81,
+        "market_value": 225381.0,
+        "weight": 0.6618,
+        "target": 0.0,
         "asset_class": "us_equity"
       },
       {
         "symbol": "QQQ261106C00775000",
         "qty": -3.0,
-        "market_value": -1674.0,
-        "unrealized_pl": 696.0,
+        "market_value": -1650.0,
+        "weight": -0.0048,
+        "target": 0.0,
         "asset_class": "us_option"
       }
     ],
-    "equity_curve": [
-      {
-        "date": "2026-08-10",
-        "equity": 336071.54
-      },
-      {
-        "date": "2026-08-11",
-        "equity": 334881.02
-      },
-      {
-        "date": "2026-08-12",
-        "equity": 337620.26
-      },
-      {
-        "date": "2026-08-13",
-        "equity": 338393.85
-      },
-      {
-        "date": "2026-08-14",
-        "equity": 339104.73
-      },
-      {
-        "date": "2026-08-17",
-        "equity": 340031.67
-      },
-      {
-        "date": "2026-08-18",
-        "equity": 334382.31
-      },
-      {
-        "date": "2026-08-19",
-        "equity": 338460.57
-      },
-      {
-        "date": "2026-08-20",
-        "equity": 337345.05
-      },
-      {
-        "date": "2026-08-21",
-        "equity": 340479.45
-      },
-      {
-        "date": "2026-08-24",
-        "equity": 339322.47
-      },
-      {
-        "date": "2026-08-25",
-        "equity": 341051.19
-      },
-      {
-        "date": "2026-08-26",
-        "equity": 339369.52
-      },
-      {
-        "date": "2026-08-27",
-        "equity": 342280.84
-      },
-      {
-        "date": "2026-08-28",
-        "equity": 337410.1
-      },
-      {
-        "date": "2026-08-31",
-        "equity": 337493.92
-      },
-      {
-        "date": "2026-09-01",
-        "equity": 331497.94
-      },
-      {
-        "date": "2026-09-02",
-        "equity": 333759.76
-      },
-      {
-        "date": "2026-09-03",
-        "equity": 338464.12
-      },
-      {
-        "date": "2026-09-04",
-        "equity": 337851.82
-      },
-      {
-        "date": "2026-09-08",
-        "equity": 335614.12
-      },
-      {
-        "date": "2026-09-09",
-        "equity": 336267.17
-      },
-      {
-        "date": "2026-09-10",
-        "equity": 332220.11
-      },
-      {
-        "date": "2026-09-11",
-        "equity": 334857.65
-      },
-      {
-        "date": "2026-09-14",
-        "equity": 331557.23
-      },
-      {
-        "date": "2026-09-15",
-        "equity": 330607.37
-      },
-      {
-        "date": "2026-09-16",
-        "equity": 329964.83
-      },
-      {
-        "date": "2026-09-17",
-        "equity": 335523.11
-      },
-      {
-        "date": "2026-09-18",
-        "equity": 337690.25
-      },
-      {
-        "date": "2026-09-21",
-        "equity": 341309.99
-      },
-      {
-        "date": "2026-09-22",
-        "equity": 342535.85
-      },
-      {
-        "date": "2026-09-23",
-        "equity": 339641.86
-      },
-      {
-        "date": "2026-09-24",
-        "equity": 338895.84
-      },
-      {
-        "date": "2026-09-25",
-        "equity": 340448.52
-      },
-      {
-        "date": "2026-09-28",
-        "equity": 334028.52
-      },
-      {
-        "date": "2026-09-29",
-        "equity": 335984.64
-      },
-      {
-        "date": "2026-09-30",
-        "equity": 335903.94
-      },
-      {
-        "date": "2026-10-01",
-        "equity": 337242.42
-      },
-      {
-        "date": "2026-10-02",
-        "equity": 338707.14
-      },
-      {
-        "date": "2026-10-05",
-        "equity": 340417.68
-      },
-      {
-        "date": "2026-10-06",
-        "equity": 341685.22
-      },
-      {
-        "date": "2026-10-07",
-        "equity": 338915.36
-      }
-    ]
-  },
-  "gate": {
-    "day": 30,
-    "of": 30,
-    "days_left": 0,
-    "window": "2026-06-10 to 2026-07-10",
-    "status": "CLOSED 2026-07-10 \u2014 operational criteria met",
-    "purpose": "operational validation only (fills, rebalancing, management) \u2014 not economic/tail validation",
-    "note": "Superseded. The account was replaced 2026-08-08 and the config changed 2026-08-07/08 (3% OTM, 35% gold, kill-switch disarmed). The track record above starts at the inception date shown (2026-08-08), not at this window."
+    "started": false,
+    "start_date": null,
+    "last_rebalance_month": null
   }
 }
