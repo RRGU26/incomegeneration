@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T16:15:00",
+  "generated_at": "2026-10-12T16:45:06",
   "status": "PAPER TRADING \u2014 HYPOTHETICAL, NO REAL CAPITAL",
   "strategy": {
     "name": "Diversified Trend Portfolio",
@@ -106,14 +106,14 @@
     ]
   },
   "account": {
-    "equity": 339017.87,
+    "equity": 339359.53,
     "cash": 610.73,
     "positions": [
       {
         "symbol": "BIL",
         "qty": 739.957163151,
-        "market_value": 67713.33,
-        "weight": 0.1997,
+        "market_value": 67711.93,
+        "weight": 0.1995,
         "target": 0.2,
         "asset_class": "us_equity"
       },
@@ -121,47 +121,47 @@
         "symbol": "DBMF",
         "qty": 1016.108343337,
         "market_value": 33846.57,
-        "weight": 0.0998,
+        "weight": 0.0997,
         "target": 0.1,
         "asset_class": "us_equity"
       },
       {
         "symbol": "GLD",
         "qty": 88.733531,
-        "market_value": 33913.07,
-        "weight": 0.1,
+        "market_value": 33918.39,
+        "weight": 0.0999,
         "target": 0.1,
         "asset_class": "us_equity"
       },
       {
         "symbol": "IEF",
         "qty": 378.625922612,
-        "market_value": 33868.09,
-        "weight": 0.0999,
+        "market_value": 33864.3,
+        "weight": 0.0998,
         "target": 0.1,
         "asset_class": "us_equity"
       },
       {
         "symbol": "KMLM",
         "qty": 1080.304084237,
-        "market_value": 33856.73,
-        "weight": 0.0999,
+        "market_value": 34137.61,
+        "weight": 0.1006,
         "target": 0.1,
         "asset_class": "us_equity"
       },
       {
         "symbol": "VEU",
         "qty": 655.42383545,
-        "market_value": 54065.91,
-        "weight": 0.1595,
+        "market_value": 54026.59,
+        "weight": 0.1592,
         "target": 0.16,
         "asset_class": "us_equity"
       },
       {
         "symbol": "VTI",
         "qty": 212.718081625,
-        "market_value": 81143.44,
-        "weight": 0.2393,
+        "market_value": 81243.42,
+        "weight": 0.2394,
         "target": 0.24,
         "asset_class": "us_equity"
       }
@@ -170,10 +170,10 @@
     "start_date": "2026-10-12",
     "last_rebalance_month": "2026-10",
     "start_equity": 339308.15,
-    "earnings": -290.28,
-    "total_return": -0.0009,
-    "peak_equity": 339308.15,
-    "drawdown": 0.0009,
+    "earnings": 51.38,
+    "total_return": 0.0002,
+    "peak_equity": 339359.53,
+    "drawdown": 0.0,
     "equity_curve": [],
     "virtual_contributions": {
       "count": 0,
