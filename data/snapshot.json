@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T16:15:00",
+  "generated_at": "2026-10-14T16:45:04",
   "status": "PAPER TRADING \u2014 HYPOTHETICAL, NO REAL CAPITAL",
   "strategy": {
     "name": "Diversified Trend Portfolio",
@@ -114,13 +114,13 @@
     ]
   },
   "account": {
-    "equity": 336731.5,
+    "equity": 336675.53,
     "cash": 604.42,
     "positions": [
       {
         "symbol": "BIL",
         "qty": 739.957163151,
-        "market_value": 67724.58,
+        "market_value": 67721.1,
         "weight": 0.2011,
         "target": 0.2,
         "asset_class": "us_equity"
@@ -128,15 +128,15 @@
       {
         "symbol": "DBMF",
         "qty": 1016.108343337,
-        "market_value": 33592.54,
-        "weight": 0.0998,
+        "market_value": 33633.19,
+        "weight": 0.0999,
         "target": 0.1,
         "asset_class": "us_equity"
       },
       {
         "symbol": "GLD",
         "qty": 88.733531,
-        "market_value": 33346.95,
+        "market_value": 33322.99,
         "weight": 0.099,
         "target": 0.1,
         "asset_class": "us_equity"
@@ -144,7 +144,7 @@
       {
         "symbol": "IEF",
         "qty": 378.625922612,
-        "market_value": 33974.1,
+        "market_value": 33966.53,
         "weight": 0.1009,
         "target": 0.1,
         "asset_class": "us_equity"
@@ -161,15 +161,15 @@
         "symbol": "VEU",
         "qty": 655.42383545,
         "market_value": 53521.91,
-        "weight": 0.1589,
+        "weight": 0.159,
         "target": 0.16,
         "asset_class": "us_equity"
       },
       {
         "symbol": "VTI",
         "qty": 212.718081625,
-        "market_value": 80175.08,
-        "weight": 0.2381,
+        "market_value": 80113.48,
+        "weight": 0.238,
         "target": 0.24,
         "asset_class": "us_equity"
       }
@@ -178,10 +178,10 @@
     "start_date": "2026-10-12",
     "last_rebalance_month": "2026-10",
     "start_equity": 339308.15,
-    "earnings": -2576.65,
-    "total_return": -0.0076,
+    "earnings": -2632.62,
+    "total_return": -0.0078,
     "peak_equity": 339308.15,
-    "drawdown": 0.0076,
+    "drawdown": 0.0078,
     "equity_curve": [
       {
         "date": "2026-10-12",
