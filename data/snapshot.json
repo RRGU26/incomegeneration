@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T16:45:02",
+  "generated_at": "2026-10-19T16:15:02",
   "status": "PAPER TRADING \u2014 HYPOTHETICAL, NO REAL CAPITAL",
   "strategy": {
     "name": "Diversified Trend Portfolio",
@@ -95,9 +95,9 @@
     "The control is tracked virtually at market prices (no costs), rebalanced on the first update of each month, because the paper account can hold only one book. It starts at the start day's closing prices, while the account starts at the 10 AM run."
   ],
   "control": {
-    "nav": 337525.25,
+    "nav": 337431.44,
     "start_equity": 339308.15,
-    "total_return": -0.0053,
+    "total_return": -0.0055,
     "curve": [
       {
         "date": "2026-10-12",
@@ -118,66 +118,70 @@
       {
         "date": "2026-10-16",
         "nav": 337525.25
+      },
+      {
+        "date": "2026-10-19",
+        "nav": 337431.44
       }
     ]
   },
   "account": {
-    "equity": 336017.81,
+    "equity": 336565.3,
     "cash": 604.42,
     "positions": [
       {
         "symbol": "BIL",
         "qty": 739.957163151,
-        "market_value": 67754.18,
-        "weight": 0.2016,
+        "market_value": 67758.25,
+        "weight": 0.2013,
         "target": 0.2,
         "asset_class": "us_equity"
       },
       {
         "symbol": "DBMF",
         "qty": 1016.108343337,
-        "market_value": 33297.87,
-        "weight": 0.0991,
+        "market_value": 33501.09,
+        "weight": 0.0995,
         "target": 0.1,
         "asset_class": "us_equity"
       },
       {
         "symbol": "GLD",
         "qty": 88.733531,
-        "market_value": 33895.32,
-        "weight": 0.1009,
+        "market_value": 33667.28,
+        "weight": 0.1,
         "target": 0.1,
         "asset_class": "us_equity"
       },
       {
         "symbol": "IEF",
         "qty": 378.625922612,
-        "market_value": 34242.93,
-        "weight": 0.1019,
+        "market_value": 34111.17,
+        "weight": 0.1014,
         "target": 0.1,
         "asset_class": "us_equity"
       },
       {
         "symbol": "KMLM",
         "qty": 1080.304084237,
-        "market_value": 33197.74,
-        "weight": 0.0988,
+        "market_value": 33673.08,
+        "weight": 0.1,
         "target": 0.1,
         "asset_class": "us_equity"
       },
       {
         "symbol": "VEU",
         "qty": 655.42383545,
-        "market_value": 53443.26,
-        "weight": 0.159,
+        "market_value": 53331.84,
+        "weight": 0.1585,
         "target": 0.16,
         "asset_class": "us_equity"
       },
       {
         "symbol": "VTI",
         "qty": 212.718081625,
-        "market_value": 79582.09,
-        "weight": 0.2368,
+        "market_value": 79918.18,
+        "weight": 0.2375,
         "target": 0.24,
         "asset_class": "us_equity"
       }
@@ -186,10 +190,10 @@
     "start_date": "2026-10-12",
     "last_rebalance_month": "2026-10",
     "start_equity": 339308.15,
-    "earnings": -3290.34,
-    "total_return": -0.0097,
+    "earnings": -2742.85,
+    "total_return": -0.0081,
     "peak_equity": 339308.15,
-    "drawdown": 0.0097,
+    "drawdown": 0.0081,
     "equity_curve": [
       {
         "date": "2026-10-12",
@@ -206,6 +210,10 @@
       {
         "date": "2026-10-15",
         "equity": 337425.11
+      },
+      {
+        "date": "2026-10-16",
+        "equity": 336214.19
       }
     ],
     "virtual_contributions": {
